@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Depo Air Minum Altez</title>
+  <meta name="description" content="Pesan galon isi ulang cepat dan mudah di Depo Air Minum Altez. Alami & Segar.">
+  <style>
+    :root {
+      --biru-tipis: #e0f7fa;
+      --biru-teks: #000000;
+      --putih-bening: rgba(255, 255, 255, 0.9);
+      --bayangan-biru: rgba(2, 136, 209, 0.3);
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-style: italic;
+      background: linear-gradient(to bottom right, var(--biru-tipis), white);
+      color: var(--biru-teks);
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: var(--putih-bening);
+      border-radius: 12px;
+      box-shadow: 0 0 12px var(--bayangan-biru);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--biru-teks);
+    }
+
+    section {
+      margin: 40px auto;
+      padding: 20px;
+      background-color: var(--putih-bening);
+      border-radius: 10px;
+      box-shadow: 0 0 10px var(--bayangan-biru);
+      max-width: 500px;
+    }
+
+    section h2 {
+      color: var(--biru-teks);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, button {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid var(--biru-teks);
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: var(--biru-teks);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 8px var(--biru-teks);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: var(--biru-teks);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      section h2 { font-size: 1.5rem; }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Depo Air Minum Altez</h1>
+    <p>Galon Isi Ulang • Alami & Segar</p>
+  </header>
+
+  <section>
+    <h2>Form Pemesanan Galon</h2>
+    <form id="pesanForm">
+      <input type="text" id="nama" placeholder="Nama Anda" required />
+      <input type="text" id="alamat" placeholder="Alamat Pengantaran" required />
+      <input type="number" id="jumlah" placeholder="Jumlah Galon" required />
+      <button type="submit">Kirim Pesanan via WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>📍 Muara Komam, Kalimantan Timur</p>
+    <p>© 2025 Depo Air Minum Altez. Powered by Altez.</p>
+  </footer>
+
+  <script>
+    document.getElementById("pesanForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nama = document.getElementById("nama").value.trim();
+      const alamat = document.getElementById("alamat").value.trim();
+      const jumlah = document.getElementById("jumlah").value.trim();
+
+      if (!nama || !alamat || !jumlah) {
+        alert("Harap isi semua kolom sebelum mengirim.");
+        return;
+      }
+
+      const pesan = `Halo Depo Air Minum Altez, saya mau pesan galon isi ulang.%0A%0A` +
+                    `Nama: ${nama}%0A` +
+                    `Alamat: ${alamat}%0A` +
+                    `Jumlah Galon: ${jumlah}%0A` +
+                    `Terima kasih!`;
+                    
+      const nomorWA = "6287753125332";
+      const linkWA = `https://wa.me/${nomorWA}?text=${pesan}`;
+
+      window.open(linkWA, '_blank');
+    });
+  </script>
+
+</body>
+</html>
